@@ -72,9 +72,11 @@ class GetAllData(webapp2.RequestHandler):
             'requests': [request.to_json() for request in WalkRequest.query()],
         }
         return self.response.out.write(json.encode(data))
-        class doggoResponse(webapp2.ResquestHandler):
-            def get(self):
-                return self.response.out.write("woof")
+
+
+class doggoResponse(webapp2.RequestHandler):
+    def get(self):
+        return self.response.out.write("woof")
 
 
 app = webapp2.WSGIApplication([
